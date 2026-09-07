@@ -50,6 +50,14 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+@app.get("/", tags=["Root"])
+async def root():
+    return {
+        "message": "Welcome to ABDM Doctor & Facility Search Engine API",
+        "docs": "/docs",
+        "health": "/healthz"
+    }
+
 
 @app.get("/healthz", tags=["Health"])
 async def health_check():
