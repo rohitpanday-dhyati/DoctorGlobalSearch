@@ -1,0 +1,10 @@
+# Mac system files
+.DS_Store
+
+# Environment variables/Secrets
+.env
+
+# Dependencies (if using Node or Python)
+node_modules/
+__pycache__/
+venv/
