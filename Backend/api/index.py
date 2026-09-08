@@ -51,16 +51,18 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://*.vercel.app",  # Allows Vercel preview deployments
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",                   # Local Next.js dev server
-        "https://*.vercel.app",                   # Vercel preview/production deployments
-        "*"                                       # Allow all origins (for testing)
-    ],
+    allow_origins=["*"],  # Use ["*"] for public access, or `origins` array for stricter security
     allow_credentials=True,
-    allow_methods=["*"],                          # Allow GET, POST, OPTIONS, etc.
-    allow_headers=["*"],                          # Allow standard & custom headers
+    allow_methods=["*"],  # Allows GET, POST, OPTIONS, etc.
+    allow_headers=["*"],
 )
 
 @app.get("/", tags=["Root"])
