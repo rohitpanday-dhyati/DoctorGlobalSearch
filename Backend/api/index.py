@@ -59,7 +59,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Use ["*"] for public access, or `origins` array for stricter security
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],  # Allows GET, POST, OPTIONS, etc.
     allow_headers=["*"],
