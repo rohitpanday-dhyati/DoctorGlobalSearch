@@ -55,7 +55,7 @@ export default function SearchBar({
             value={query}
             onChange={(e) => onQueryChange(e.target.value)}
             placeholder="Search doctors, specialties (e.g. Neuro, Cardio, Ortho)..."
-            className="w-full pl-11 pr-9 py-2.5 text-sm sm:text-base rounded-lg border border-transparent focus:border-blue-500 focus:bg-slate-50 focus:outline-none transition"
+            className="w-full pl-11 pr-9 py-2.5 text-sm sm:text-base text-slate-900 bg-white placeholder:text-slate-400 rounded-lg border border-transparent focus:border-blue-500 focus:bg-slate-50 focus:outline-none transition"
           />
           {query && (
             <button

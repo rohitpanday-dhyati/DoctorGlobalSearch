@@ -11,7 +11,7 @@ interface PageProps {
 }
 
 export default async function DoctorProfilePage({ params }: PageProps) {
-  const doctorId = params.id;
+  const { id: doctorId } = await params;
 
   try {
     const doctor = await fetchDoctorProfile(doctorId);

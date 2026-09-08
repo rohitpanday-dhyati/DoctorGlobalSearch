@@ -131,10 +131,13 @@ export default function SearchPage() {
             </div>
           )}
 
-          {/* Doctors Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {doctors.map((doctor) => (
-              <DoctorCard key={doctor.doctor_id} doctor={doctor} />
+           {/* Doctors Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {doctors.map((doctor, index) => (
+              <DoctorCard
+                key={`${doctor.doctor_id}-${doctor.facility_id || index}`}
+                doctor={doctor}
+              />
             ))}
           </div>
         </div>
