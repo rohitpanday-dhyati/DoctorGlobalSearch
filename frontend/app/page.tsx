@@ -30,7 +30,7 @@ export default function SearchPage() {
     const params: SearchParams = {
       lat,
       lng,
-      radius_km: 15,
+      radius_km: 50,
       specialties: query.trim() || undefined,
       max_fee: maxFee,
       modes: selectedModes.length > 0 ? selectedModes : undefined,
