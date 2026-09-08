@@ -54,7 +54,8 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://*.vercel.app",  # Allows Vercel preview deployments
+    "https://frontend-two-ruby-89.vercel.app/",
+    "https://*.vercel.app",
 ]
 
 app.add_middleware(
