@@ -1,6 +1,6 @@
 import { DoctorProfile, DoctorSearchResult, SearchParams } from '@/types/api';
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://doctor-global-search-backend-git-main-personal-5050.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || '';
 
 export async function fetchDoctors(params: SearchParams): Promise<DoctorSearchResult[]> {
   const query = new URLSearchParams();
