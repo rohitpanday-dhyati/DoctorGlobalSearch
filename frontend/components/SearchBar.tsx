@@ -32,7 +32,7 @@ export default function SearchBar({
       (position) => {
         const { latitude, longitude } = position.coords;
         onLocationUpdate(latitude, longitude);
-        setLocationName(`${latitude.toFixed(3)}, ${longitude.toFixed(3)}`);
+        setLocationName(`${longitude.toFixed(3)}, ${latitude.toFixed(3)}`);
         setIsLocating(false);
       },
       (error) => {

@@ -2,6 +2,7 @@ import os
 from typing import List, Optional
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Query, HTTPException, Response, logger
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from uuid import UUID
 import asyncpg
@@ -48,6 +49,18 @@ app = FastAPI(
     version="1.0.0",
     description="High-performance, location-aware search API powered by PostGIS & PL/pgSQL",
     lifespan=lifespan
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",                   # Local Next.js dev server
+        "https://*.vercel.app",                   # Vercel preview/production deployments
+        "*"                                       # Allow all origins (for testing)
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],                          # Allow GET, POST, OPTIONS, etc.
+    allow_headers=["*"],                          # Allow standard & custom headers
 )
 
 @app.get("/", tags=["Root"])
