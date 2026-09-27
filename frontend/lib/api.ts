@@ -8,7 +8,7 @@ export async function fetchDoctors(params: SearchParams): Promise<DoctorSearchRe
   if (params.lat !== undefined) query.append('lat', params.lat.toString());
   if (params.lng !== undefined) query.append('lng', params.lng.toString());
   if (params.radius_km !== undefined) query.append('radius_km', params.radius_km.toString());
-  if (params.specialties) query.append('q', params.specialties);
+  if (params.specialties) query.append('specialties', params.specialties);
   if (params.max_fee) query.append('max_fee', params.max_fee.toString());
   if (params.limit) query.append('limit', params.limit.toString());
   if (params.offset) query.append('offset', params.offset.toString());
